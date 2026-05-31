@@ -31,26 +31,26 @@ import org.springframework.transaction.PlatformTransactionManager;
 		transactionManagerRef = "db1TransactionManager")
 public class Db1Config {
 
-	@Primary
+	@Primary /*ต้องใส่ตัวแรกเสมอ*/
 	@Bean(name = "db1DataSource")
 	@ConfigurationProperties(prefix = "spring.datasource.db1")
 	DataSource dataSource() {
 		return DataSourceBuilder.create().build();
 	}
 
-	@Primary
+	@Primary /*ต้องใส่ตัวแรกเสมอ*/
 	@Bean(name = "db1JdbcOperations")
 	NamedParameterJdbcOperations jdbcOperations(@Qualifier("db1DataSource") DataSource dataSource) {
 		return new NamedParameterJdbcTemplate(dataSource);
 	}
 
-	@Primary
+	@Primary /*ต้องใส่ตัวแรกเสมอ*/
 	@Bean(name = "db1TransactionManager")
 	PlatformTransactionManager transactionManager(@Qualifier("db1DataSource") DataSource dataSource) {
 		return new DataSourceTransactionManager(dataSource);
 	}
 
-	@Primary
+	@Primary /*ต้องใส่ตัวแรกเสมอ*/
 	@Bean(name = "db1JdbcAggregateTemplate")
 	JdbcAggregateTemplate db1JdbcAggregateTemplate(
 			ApplicationContext applicationContext,
