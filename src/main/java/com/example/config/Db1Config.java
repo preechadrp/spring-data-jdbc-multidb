@@ -27,7 +27,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
-@EnableJdbcRepositories(basePackages = "com.example.db1.repository", jdbcAggregateOperationsRef = "db1JdbcAggregateTemplate", 
+@EnableJdbcRepositories(basePackages = "com.example.db1.repository", // 🎯 ชี้เป้าโฟลเดอร์
+		jdbcAggregateOperationsRef = "db1JdbcAggregateTemplate", // 🌟 แก้ไข: เปลี่ยนชื่อ Ref มาใช้ตัวใหม่
 		transactionManagerRef = "db1TransactionManager")
 public class Db1Config {
 
@@ -52,7 +53,7 @@ public class Db1Config {
 
 	@Primary /*ต้องใส่ตัวแรกเสมอ*/
 	@Bean(name = "db1JdbcAggregateTemplate")
-	JdbcAggregateTemplate db1JdbcAggregateTemplate(
+	JdbcAggregateTemplate dbJdbcAggregateTemplate(
 			ApplicationContext applicationContext,
 			JdbcMappingContext mappingContext,
 			JdbcConverter jdbcConverter,

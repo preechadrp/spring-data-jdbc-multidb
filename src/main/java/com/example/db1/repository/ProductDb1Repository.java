@@ -8,12 +8,10 @@ import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
 import com.example.dto.ProductSummary;
 import com.example.model.Product;
 
-@Repository
 public interface ProductDb1Repository extends CrudRepository<Product, Long> {
 
 	// 1. Spring Data จะเดา SQL ให้จากชื่อ Method (Query Method)

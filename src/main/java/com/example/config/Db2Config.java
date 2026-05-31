@@ -48,7 +48,7 @@ public class Db2Config {
 	}
 
 	@Bean(name = "db2JdbcAggregateTemplate")
-	JdbcAggregateTemplate db2JdbcAggregateTemplate(
+	JdbcAggregateTemplate dbJdbcAggregateTemplate(
 			ApplicationContext applicationContext,
 			JdbcMappingContext mappingContext,
 			JdbcConverter jdbcConverter,
