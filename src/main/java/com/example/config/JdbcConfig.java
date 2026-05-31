@@ -1,6 +1,6 @@
 /*
  * class นี้ถ้าเป็นฐานข้อมูลดังๆ เช่น mysql,mariadb,mssql,oracle,postgresql,h2,sqllite 
- * ไม่จำเป็นต้องมี
+ * ไม่จำเป็นต้องมี แต่ในตัวอย่างนี้ใช้ Firebird เลยต้องใช้
  */
 package com.example.config;
 
