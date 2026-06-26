@@ -34,7 +34,7 @@ public class Db1Config {
 
 	@Primary /*ต้องใส่ตัวแรกเสมอ*/
 	@Bean(name = "db1DataSource")
-	@ConfigurationProperties(prefix = "spring.datasource.db1")
+	@ConfigurationProperties(prefix = "db1")
 	DataSource dataSource() {
 		return DataSourceBuilder.create().build();
 	}

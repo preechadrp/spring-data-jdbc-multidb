@@ -32,7 +32,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 public class Db2Config {
 
 	@Bean(name = "db2DataSource")
-	@ConfigurationProperties(prefix = "spring.datasource.db2")
+	@ConfigurationProperties(prefix = "db2")
 	DataSource dataSource() {
 		return DataSourceBuilder.create().build();
 	}

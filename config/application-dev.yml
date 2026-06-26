@@ -1,4 +1,17 @@
+# Spring SQL Initialization
+spring:
+    sql:
+        init:
+            mode: always
 
+logging:
+    level:
+        org:
+            springframework:
+                jdbc:
+                    core:
+                        JdbcTemplate: DEBUG
+                        
 # --- Database 1 (Primary) ---
 db1:
     jdbc-url: jdbc:firebird://localhost:3050/D:/javaDemo1/TESTHIBERNET.FDB?encoding=UTF8
@@ -21,17 +34,5 @@ db2:
     hikari.connection-timeout: 30000
     hikari.auto-commit: true
 
-# Spring SQL Initialization
-spring:
-    sql:
-        init:
-            mode: always
 
-logging:
-    level:
-        org:
-            springframework:
-                jdbc:
-                    core:
-                        JdbcTemplate: DEBUG
                         
