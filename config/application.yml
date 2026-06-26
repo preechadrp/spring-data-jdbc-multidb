@@ -1,0 +1,10 @@
+spring:
+    profiles:
+        active: dev
+    application:
+        name: spring-data-jdbc-multidb
+    threads:
+        virtual.enabled: true
+#if not store in /src/main/resources
+logging:
+    config: config/logback-spring.xml
