@@ -37,15 +37,15 @@ public class JdbcConfig extends AbstractJdbcConfiguration {
 		JdbcMappingContext context = super.jdbcMappingContext(namingStrategy, customConversions, jdbcManagedTypes);
 
 		// สั่งปิดการใส่ " (Double Quote) อัตโนมัติ ทำให้ sql ที่ gen ไม่มี Double Quote ครอบชื่อฟิลด์ 
-		context.setForceQuote(false);
-
 		/*
-		 * สาเหตุที่มันมี Double Quotes (") ครอบ
+		สาเหตุที่มันมี Double Quotes (") ครอบ
 		ตั้งแต่ Spring Data JDBC เวอร์ชันใหม่ๆ เป็นต้นมา ทีมพัฒนาได้เปิดโหมดที่เรียกว่า Force Quote เป็น true ไว้เป็นค่าเริ่มต้น 
 		สาเหตุเพราะเขาต้องการป้องกันไม่ให้ชื่อ Table หรือ Column ของเราไปซ้ำกับ "คำสงวน" (Reserved Words) 
 		ของ Database เช่น ถ้าคุณตั้งชื่อฟิลด์ว่า order หรือ select ระบบจะได้ไม่พังเพราะมันจะส่งไปเป็น "order" ให้แทน
 		แต่พอมาเจอกับ Firebird การส่ง "name" (ตัวเล็ก) ไป จะทำให้ Database หาคอลัมน์ไม่เจอ เพราะปกติ Firebird จะเก็บชื่อคอลัมน์เป็นตัวใหญ่ (UPPERCASE) ทั้งหมดครับ
 		 */
+		//context.setForceQuote(false);
+
 		return context;
 	}
 
