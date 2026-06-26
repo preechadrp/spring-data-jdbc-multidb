@@ -18,10 +18,11 @@ db1:
     driver-class-name: org.firebirdsql.jdbc.FBDriver
     username: SYSDBA
     password: masterkey
-    hikari.maximum-pool-size: 3
-    hikari.minimum-idle: 2
-    hikari.connection-timeout: 30000
-    hikari.auto-commit: true
+    maximum-pool-size: 3
+    minimum-idle: 2
+    connection-timeout: 30000
+    auto-commit: true
+    pool-name: db1-pool
 
 # --- Database 2 (Secondary) ---
 db2:
@@ -29,10 +30,11 @@ db2:
     driver-class-name: org.firebirdsql.jdbc.FBDriver
     username: SYSDBA
     password: masterkey
-    hikari.maximum-pool-size: 3
-    hikari.minimum-idle: 2
-    hikari.connection-timeout: 30000
-    hikari.auto-commit: true
+    maximum-pool-size: 4
+    minimum-idle: 2
+    connection-timeout: 30000
+    auto-commit: true
+    pool-name: db2-pool
 
 
                         

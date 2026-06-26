@@ -4,7 +4,6 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +24,8 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import com.zaxxer.hikari.HikariDataSource;
+
 @Configuration
 @EnableJdbcRepositories(basePackages = "com.example.db2.repository", // 🎯 ชี้เป้าโฟลเดอร์
 		jdbcAggregateOperationsRef = "db2JdbcAggregateTemplate", // 🌟 แก้ไข: เปลี่ยนชื่อ Ref มาใช้ตัวใหม่
@@ -33,8 +34,8 @@ public class Db2Config {
 
 	@Bean(name = "db2DataSource")
 	@ConfigurationProperties(prefix = "db2")
-	DataSource dataSource() {
-		return DataSourceBuilder.create().build();
+	HikariDataSource dataSource() {
+		return new HikariDataSource();
 	}
 
 	@Bean(name = "db2JdbcOperations")
