@@ -30,6 +30,7 @@
 	<logger name="org.springframework" level="info" />
 	<logger name="com.zaxxer.hikari.pool.HikariPool" level="warn" />
 	<logger name="org.hibernate.validator" level="info" />
+	<logger name="org.mariadb.jdbc.client.impl.StandardClient" level="info" />
 
 	<!-- Profile: dev -->
 	<springProfile name="dev">
@@ -37,6 +38,7 @@
 			<appender-ref ref="CONSOLE" />
 			<appender-ref ref="ROLLING" />
 		</root>
+		<logger name="org.springframework.jdbc.core.JdbcTemplate" level="debug" />
 	</springProfile>
 
 	<!-- Profile: prod -->

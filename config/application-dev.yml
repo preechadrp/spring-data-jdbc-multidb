@@ -28,13 +28,6 @@ db2:
     auto-commit: true
     pool-name: db2-pool
     
-logging:
-    level:
-        org:
-            springframework:
-                jdbc:
-                    core:
-                        JdbcTemplate: DEBUG
                         
 
 
